@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Task Manager Pro | Detalhes</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
+
+  <body class="portfolio-details-page">
+    <header id="header" class="header dark-background d-flex flex-column">
+      <i class="header-toggle d-xl-none bi bi-list"></i>
+
+      <div class="profile-img">
+        <img
+          src="assets/img/Bryan-perfil.png"
+          alt="Foto de Álex Bryan"
+          class="img-fluid rounded-circle"
+        />
+      </div>
+
+      <a
+        href="index.html"
+        class="logo d-flex align-items-center justify-content-center"
+      >
+        <h1 class="sitename">Álex Bryan</h1>
+      </a>
+
+      <div class="social-links text-center">
+        <a href="https://instagram.com/alexbryannt" class="instagram"
+          ><i class="bi bi-instagram"></i
+        ></a>
+        <a href="https://github.com/Bryanninja" class="github" target="_blank"
+          ><i class="bi bi-github"></i
+        ></a>
+        <a href="https://linkedin.com/in/alexbryannt" class="linkedin"
+          ><i class="bi bi-linkedin"></i
+        ></a>
+      </div>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li>
+            <a href="index.html#hero"
+              ><i class="bi bi-house navicon"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="index.html#about"
+              ><i class="bi bi-person navicon"></i> Sobre</a
+            >
+          </li>
+          <li>
+            <a href="index.html#portfolio"
+              ><i class="bi bi-images navicon"></i> Portfólio</a
+            >
+          </li>
+          <li>
+            <a href="index.html#contact"
+              ><i class="bi bi-envelope navicon"></i> Contato</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="page-title dark-background">
+        <div
+          class="container d-lg-flex justify-content-between align-items-center"
+        >
+          <h1 class="mb-2 mb-lg-0">Task Manager Pro</h1>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#portfolio">Portfólio</a></li>
+              <li class="current">Detalhes do Projeto</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <section id="portfolio-details" class="portfolio-details section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div class="col-lg-8">
+              <div class="portfolio-details-slider swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    }
+                  }
+                </script>
+
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/img/portfolio/task-home.png"
+                      alt="Tela Inicial Task Manager"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/img/portfolio/task-list.png"
+                      alt="Lista de Tarefas"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/img/portfolio/task-add.png"
+                      alt="Adicionar Nova Tarefa"
+                    />
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img
+                      src="assets/img/portfolio/task-details.png"
+                      alt="Detalhes da Tarefa"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div
+                class="portfolio-info"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <h3>Informações Técnicas</h3>
+                <ul>
+                  <li><strong>Categoria</strong>: Web App / Produtividade</li>
+                  <li>
+                    <strong>Stack Principal</strong>: React 19, Tailwind,
+                    TanStack Query
+                  </li>
+                  <li><strong>Deploy</strong>: Vercel</li>
+                  <li>
+                    <strong>Projeto Online</strong>:
+                    <a href="https://app-tasks-red.vercel.app" target="_blank"
+                      >Acessar Live Demo <i class="bi bi-arrow-up-right"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <strong>Repositório</strong>:
+                    <a
+                      href="https://github.com/Bryanninja/app_tasks"
+                      target="_blank"
+                      >Ver Código no GitHub <i class="bi bi-github"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="portfolio-description"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h2>Mais que um To-Do List</h2>
+                <p>
+                  O <strong>Task Manager Pro</strong> é uma solução completa de
+                  produtividade pessoal. Diferente de listas comuns, ele
+                  implementa um conceito de "Well-being Productivity",
+                  integrando a gestão de tarefas por períodos do dia (Manhã,
+                  Tarde, Noite) com monitoramento de hidratação.
+                </p>
+
+                <h3>Destaques de Engenharia</h3>
+                <p>
+                  Este projeto foi construído para demonstrar domínio sobre o
+                  ecossistema moderno do React. O foco não foi apenas
+                  "funcionar", mas ser escalável e performático.
+                </p>
+                <ul>
+                  <li>
+                    <strong>React 19 & Vite:</strong> Utilizando as features
+                    mais recentes para máxima performance.
+                  </li>
+                  <li>
+                    <strong>TanStack Query:</strong> Gerenciamento de estado
+                    assíncrono profissional, com cacheamento inteligente e
+                    re-fetching automático.
+                  </li>
+                  <li>
+                    <strong>Robustez:</strong> Formulários controlados com
+                    <em>React Hook Form</em> e validação de esquemas via
+                    <em>Zod</em>.
+                  </li>
+                  <li>
+                    <strong>UX/UI:</strong> Interface responsiva e acessível
+                    criada com <em>Tailwind CSS</em> e componentes do
+                    <em>Radix UI</em> (via Sonner para toasts).
+                  </li>
+                  <li>
+                    <strong>Qualidade de Código:</strong> Pipeline de CI/CD
+                    configurado com <em>Husky</em> e <em>Lint-staged</em> para
+                    garantir padronização antes de cada commit.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer position-relative light-background">
+      <div class="container">
+        <div class="copyright text-center">
+          <p>
+            © <span>Copyright</span>
+            <strong class="px-1 sitename">Álex Bryan</strong>
+            <span>Todos os direitos reservados</span>
+          </p>
+        </div>
+        <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <div id="preloader"></div>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
