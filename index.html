@@ -39,6 +39,169 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      /* --- CORREÇÃO DO PORTFÓLIO (Área clicável e sem bloco azul) --- */
+      .portfolio-item {
+        margin-bottom: 30px;
+      }
+
+      .portfolio-wrap {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer; /* Mãozinha em tudo */
+      }
+
+      .portfolio-wrap img {
+        transition: 0.5s;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Efeito Hover: Escurece a imagem e dá zoom */
+      .portfolio-wrap:hover img {
+        transform: scale(1.1);
+        filter: brightness(0.4);
+      }
+
+      /* Texto sobre a imagem */
+      .portfolio-info {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transition: 0.3s;
+        padding: 20px;
+      }
+
+      .portfolio-wrap:hover .portfolio-info {
+        opacity: 1;
+      }
+
+      .portfolio-info h4 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .portfolio-info p {
+        color: #ddd;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      /* Link Fantasma que cobre tudo */
+      .portfolio-link-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+      }
+
+      /* --- CORREÇÃO DO CONTATO (Alinhamento Flexbox) --- */
+      .contact-card {
+        background: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0px 0 30px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centraliza verticalmente */
+      }
+
+      .contact .info-item {
+        display: flex; /* Flexbox para alinhar ícone e texto */
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .contact .info-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact .info-item i {
+        font-size: 20px;
+        color: #149ddd;
+        width: 44px;
+        height: 44px;
+        background: #dff3fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        flex-shrink: 0; /* Impede o ícone de amassar */
+        margin-right: 20px;
+      }
+
+      .contact .info-item h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        color: #050d18;
+      }
+
+      .contact .info-item p {
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        color: #173b6c;
+      }
+
+      /* Botões de Ação */
+      .btn-contact {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px 24px;
+        margin-bottom: 15px;
+        border-radius: 50px;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-whatsapp {
+        background-color: #25d366;
+        border: 2px solid #25d366;
+      }
+      .btn-whatsapp:hover {
+        background-color: #1ebc59;
+        color: #fff;
+      }
+
+      .btn-email-action {
+        background-color: #149ddd;
+        border: 2px solid #149ddd;
+      }
+      .btn-email-action:hover {
+        background-color: #173b6c;
+        color: #fff;
+      }
+
+      /* Classe de sucesso para o botão copiar */
+      .btn-success-copy {
+        background-color: #059669 !important; /* Verde escuro */
+        border-color: #059669 !important;
+      }
+    </style>
   </head>
 
   <body class="index-page">
@@ -61,13 +224,19 @@
       </a>
 
       <div class="social-links text-center">
-        <a href="https://instagram.com/alexbryannt" class="instagram"
+        <a
+          href="https://instagram.com/alexbryannt"
+          class="instagram"
+          target="_blank"
           ><i class="bi bi-instagram"></i
         ></a>
         <a href="https://github.com/Bryanninja" class="github" target="_blank"
           ><i class="bi bi-github"></i
         ></a>
-        <a href="https://linkedin.com/in/alexbryannt" class="linkedin"
+        <a
+          href="https://linkedin.com/in/alexbryannt"
+          class="linkedin"
+          target="_blank"
           ><i class="bi bi-linkedin"></i
         ></a>
       </div>
@@ -92,7 +261,6 @@
               ><i class="bi bi-images navicon"></i> Portfólio</a
             >
           </li>
-
           <li>
             <a href="#contact"
               ><i class="bi bi-envelope navicon"></i> Contato</a
@@ -130,6 +298,7 @@
           </p>
         </div>
       </section>
+
       <section id="about" class="about section">
         <div class="container section-title" data-aos="fade-up">
           <h2>Sobre</h2>
@@ -151,7 +320,7 @@
               />
             </div>
             <div class="col-lg-8 content">
-              <h2>Desenvolvedor Front-End &amp; Designer.</h2>
+              <h2>Desenvolvedor Front-End & Designer.</h2>
               <p class="fst-italic py-3">
                 Atualmente busco Estágio. Diariamente atuo com diversas
                 tecnologias com foco em Front-end (React, Tailwind) e Mobile
@@ -198,6 +367,7 @@
           </div>
         </div>
       </section>
+
       <section id="skills" class="skills section light-background">
         <div class="container section-title" data-aos="fade-up">
           <h2>Habilidades</h2>
@@ -303,6 +473,7 @@
           </div>
         </div>
       </section>
+
       <section id="resume" class="resume section">
         <div class="container section-title" data-aos="fade-up">
           <h2>Currículo</h2>
@@ -374,6 +545,7 @@
           </div>
         </div>
       </section>
+
       <section id="portfolio" class="portfolio section light-background">
         <div class="container section-title" data-aos="fade-up">
           <h2>Portfólio</h2>
@@ -383,114 +555,63 @@
           </p>
         </div>
         <div class="container">
-          <div
-            class="isotope-layout"
-            data-default-filter="*"
-            data-layout="masonry"
-            data-sort="original-order"
-          >
-            <ul
-              class="portfolio-filters isotope-filters"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <li data-filter="*" class="filter-active">Todos</li>
-              <li data-filter=".filter-app">App / Web</li>
-              <li data-filter=".filter-branding">Design</li>
-            </ul>
-            <div
-              class="row gy-4 isotope-container"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
-              >
-                <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/task-mockup.png"
-                    class="img-fluid"
-                    alt="Task Manager Pro Dashboard"
-                  />
-                  <div class="portfolio-info">
-                    <h4>
-                      <a
-                        href="portfolio-task-mananger.html"
-                        title="Ver Detalhes"
-                        >Task Manager Pro</a
-                      >
-                    </h4>
-                    <p>
-                      Aplicação de produtividade com React 19, TanStack Query e
-                      arquitetura robusta.
-                    </p>
+          <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item">
+              <div class="portfolio-wrap">
+                <a
+                  href="portfolio-task-manager.html"
+                  class="portfolio-link-overlay"
+                ></a>
 
-                    <a
-                      href="portfolio-task-mananger.html"
-                      title="Ver Detalhes do Projeto"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
-                  </div>
+                <img
+                  src="assets/img/portfolio/task-mockup.png"
+                  class="img-fluid"
+                  alt="Task Manager Pro Dashboard"
+                />
+
+                <div class="portfolio-info">
+                  <h4>Task Manager Pro</h4>
+                  <p>React 19 & Produtividade</p>
                 </div>
               </div>
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app"
-              >
-                <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/fastClima-mockup.png"
-                    class="img-fluid"
-                    alt="FastClima App"
-                  />
-                  <div class="portfolio-info">
-                    <h4>
-                      <a href="portfolio-fast-clima.html" title="Ver Detalhes"
-                        >FastClima</a
-                      >
-                    </h4>
-                    <p>
-                      App de Clima com React Hooks (useState/useEffect) e
-                      integração de API.
-                    </p>
-                    <a
-                      href="portfolio-fast-clima.html"
-                      title="Ver Detalhes"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
-                  </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item">
+              <div class="portfolio-wrap">
+                <a
+                  href="portfolio-fast-clima.html"
+                  class="portfolio-link-overlay"
+                ></a>
+
+                <img
+                  src="assets/img/portfolio/fastClima-mockup.png"
+                  class="img-fluid"
+                  alt="FastClima App"
+                />
+
+                <div class="portfolio-info">
+                  <h4>FastClima</h4>
+                  <p>React Hooks & API</p>
                 </div>
               </div>
+            </div>
 
-              <div
-                class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
-              >
-                <div class="portfolio-content h-100">
-                  <img
-                    src="assets/img/portfolio/hvac-ice.png"
-                    class="img-fluid"
-                    alt="HVAC Branding"
-                  />
-                  <div class="portfolio-info">
-                    <h4>
-                      <a
-                        href="portfolio-hvac-branding.html"
-                        title="Ver Detalhes"
-                        >HVAC Engineering (USA)</a
-                      >
-                    </h4>
-                    <p>
-                      Identidade Visual Internacional e Sistema de Design
-                      Completo.
-                    </p>
-                    <a
-                      href="portfolio-hvac-branding.html"
-                      title="Ver Detalhes"
-                      class="details-link"
-                      ><i class="bi bi-link-45deg"></i
-                    ></a>
-                  </div>
+            <div class="col-lg-4 col-md-6 portfolio-item">
+              <div class="portfolio-wrap">
+                <a
+                  href="portfolio-hvac-branding.html"
+                  class="portfolio-link-overlay"
+                ></a>
+
+                <img
+                  src="assets/img/portfolio/hvac-ice.png"
+                  class="img-fluid"
+                  alt="HVAC Branding"
+                />
+
+                <div class="portfolio-info">
+                  <h4>HVAC Engineering</h4>
+                  <p>Branding Internacional</p>
                 </div>
               </div>
             </div>
@@ -500,54 +621,70 @@
 
       <section id="contact" class="contact section">
         <div class="container section-title" data-aos="fade-up">
-          <h2>Contato</h2>
-          <p>Entre em contato para oportunidades de estágio ou projetos.</p>
+          <h2>Vamos Conversar?</h2>
+          <p>Estou disponível para início imediato como estagiário.</p>
         </div>
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <div class="col-lg-12">
-              <div class="info-wrap">
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div class="row gy-4 align-items-stretch">
+            <div class="col-lg-6">
+              <div class="contact-card">
+                <div class="info-item" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
                   <div>
-                    <h3>Endereço</h3>
-                    <p>Pedro Leopoldo, Minas Gerais, Brasil</p>
+                    <h3>Localização</h3>
+                    <p>Pedro Leopoldo, Minas Gerais</p>
                   </div>
                 </div>
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                >
-                  <i class="bi bi-geo-alt flex-shrink-0"></i>
-                  <div>
-                    <h3>Telefone / WhatsApp</h3>
-                    <p>(31) 9 9761-4756</p>
-                  </div>
-                </div>
-                <div
-                  class="info-item d-flex"
-                  data-aos="fade-up"
-                  data-aos-delay="400"
-                >
-                  <i class="bi bi-envelope flex-shrink-0"></i>
+                <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-envelope"></i>
                   <div>
                     <h3>Email</h3>
                     <p>bryanncode@gmail.com</p>
                   </div>
                 </div>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.177574765956!2d-44.0435!3d-19.6166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa663a1c6a2e3ff%3A0x6a2c0c1b0b0b0b0b!2sPedro%20Leopoldo%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1625680000000!5m2!1spt-BR!2sbr"
-                  frameborder="0"
-                  style="border: 0; width: 100%; height: 270px"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
+                <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-phone"></i>
+                  <div>
+                    <h3>WhatsApp / Telefone</h3>
+                    <p>(31) 9 9761-4756</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="contact-card text-center">
+                <h3>Gostou do meu perfil?</h3>
+                <p style="margin-bottom: 30px; color: #666">
+                  Vamos agendar uma entrevista ou conversar sobre como posso
+                  contribuir com sua equipe. Respondo rápido!
+                </p>
+
+                <div class="d-flex flex-column align-items-center">
+                  <a
+                    href="https://wa.me/5531997614756?text=Olá%20Álex,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar."
+                    target="_blank"
+                    class="btn-contact btn-whatsapp"
+                  >
+                    <i
+                      class="bi bi-whatsapp"
+                      style="margin-right: 8px; font-size: 20px"
+                    ></i>
+                    Chamar no WhatsApp
+                  </a>
+
+                  <a
+                    href="javascript:void(0)"
+                    class="btn-contact btn-email-action"
+                    id="btn-copy-email"
+                  >
+                    <i
+                      class="bi bi-envelope-fill"
+                      style="margin-right: 8px; font-size: 20px"
+                    ></i>
+                    <span id="btn-text">Copiar E-mail</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -580,7 +717,6 @@
     <div id="preloader"></div>
 
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/typed.js/typed.umd.js"></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -591,5 +727,30 @@
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
     <script src="assets/js/main.js"></script>
+
+    <script>
+      document
+        .getElementById("btn-copy-email")
+        .addEventListener("click", function (e) {
+          e.preventDefault(); // Não faz nada além de executar o JS
+
+          const email = "bryanncode@gmail.com";
+          const btn = this;
+          const btnText = document.getElementById("btn-text");
+
+          // Copia para área de transferência
+          navigator.clipboard.writeText(email).then(() => {
+            // Muda o visual para "Sucesso"
+            btnText.innerText = "Email Copiado!";
+            btn.classList.add("btn-success-copy");
+
+            // Volta ao normal depois de 2 segundos
+            setTimeout(() => {
+              btnText.innerText = "Copiar E-mail";
+              btn.classList.remove("btn-success-copy");
+            }, 2000);
+          });
+        });
+    </script>
   </body>
 </html>
